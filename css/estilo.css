@@ -1,0 +1,161 @@
+body 
+{
+    background-color: #95E8DD;
+    background-image: url("../imagens/teste1234.jpg");
+    
+}
+
+#topo img
+{
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+}
+
+#topo #icones
+{
+    float: right;
+    margin: 5%;
+}
+
+#menu
+{
+    margin: 0 5%;
+    width: 90%;
+    
+}
+#menu ul li
+{
+    font-weight: bold;
+}
+
+#corpo h1
+{
+    margin: 2% 5%;
+    color: #fff;
+}
+#corpo h2
+{
+    color: #fff;
+}
+
+#corpo #textIndex
+{
+    width: 95%;
+    text-align:  justify;
+    color: #fff;
+
+}
+
+#corpo #textoQuemSomos
+{
+    width: 90%;
+    text-align: justify;
+    margin: 0 5%;
+    padding: 2%;
+    color: whitesmoke;
+    font-size: 18px;
+}
+#corpo table
+{
+    width: 90%;
+    text-align: justify;
+    margin: 0 5%;
+    padding: 2%;
+   
+}
+#corpo table
+{
+      background-color: white;
+}
+#corpo #Horario
+{
+    text-align: center;
+    color: #fff;
+}
+
+
+#corpo #iconCorpo
+{
+    margin: 10px 46%;
+    color: #fff;
+}
+
+#corpo #iconCorpo h3
+{
+   text-align: center;
+   
+}
+
+#corpo #infos h3
+{
+   text-align: center;
+   color: white;
+}
+
+#corpo #tel
+{
+    text-align: center;
+    color: white
+}
+
+
+#corpo img
+{
+    border: 1px solid #000;
+    padding: 80px;
+    margin: 0 5%;
+    float: left;
+}
+#corpo .noticia
+{
+    border: solid 1px;
+    margin: 2% 6%;
+    width: 50%;
+    color: white;
+}
+
+#corpo .noticia img
+{
+    float: left;
+    max-width: 80px;
+    max-height: 80px;
+    margin: 2%;
+    padding: 5%;
+}
+
+#corpo .noticia p
+{
+    text-align: justify;
+    padding: 0 2%;
+    
+}
+#contato
+{
+    width: 20%;
+    margin: 0 auto;
+    color: #843534;
+}
+
+
+#rodape
+{
+    margin: 0%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+#login
+{
+    border: 1px solid;
+    width: 33%;
+    margin: 10% auto;
+    background-color: #31A1D6;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 2px 2px;
+    padding: 2%;
+        
+}
+
