@@ -48,7 +48,7 @@
             <!-- max palavras machete: 6 palavras -->
             <div class="noticia">
                 <img src="#" alt="IMAGEM">
-                <h2>Manchete</h2>
+                <h2>Entrevistas</h2>
                 
                 <p>
                     <!-- max palavras 70-->
@@ -60,7 +60,7 @@
             
             <div class="noticia">
                 <img src="#" alt="IMAGEM">
-                <h2>Manchete</h2>
+                <h2>Dicas de exercicios</h2>
                 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -71,7 +71,7 @@
             
             <div class="noticia">
                 <img src="#" alt="IMAGEM">
-                <h2>Manchete</h2>
+                <h2>Dicas de alimetação</h2>
                 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -82,7 +82,7 @@
             
             <div class="noticia">
                 <img src="#" alt="IMAGEM">
-                <h2>Manchete</h2>
+                <h2>Competiçoes</h2>
                 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

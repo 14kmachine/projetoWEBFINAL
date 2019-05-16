@@ -115,6 +115,23 @@ body
     color: white;
 }
 
+#corpo .noticiaServico
+{
+    border: solid 1px;
+    margin: 2% 6%;
+    width: 50%;
+    color: white;
+}
+
+#corpo .noticiaServico img
+{
+    float: left;
+    max-width: 146px;
+    max-height: 111px;
+    margin: 1%;
+    padding: 1%;
+}
+
 #corpo .noticia img
 {
     float: left;

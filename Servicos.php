@@ -46,8 +46,8 @@
             <h1>Serviços Disponiveis</h1>
             <!--EMMET: div.noticia>img+h2+p-->
             <!-- max palavras machete: 6 palavras -->
-            <div class="noticia">
-                <img src="#" alt="IMAGEM">
+            <div class="noticiaServico">
+                <img src="imagens/testenovo.jpg" alt=""/>
                 <h2>Musculação</h2>
                 
                 <p>
@@ -58,8 +58,8 @@
                
             </div>
             
-            <div class="noticia">
-                <img src="#" alt="IMAGEM">
+            <div class="noticiaServico">
+                <img src="imagens/treinamento-funcional.jpg" alt=""/>
                 <h2>Treinamento Funcional</h2>
                 
                 <p>
@@ -69,8 +69,8 @@
                
             </div>
             
-            <div class="noticia">
-                <img src="#" alt="IMAGEM">
+            <div class="noticiaServico">
+                <img src="imagens/dancafitness.jpg" alt=""/>
                 <h2>Dança</h2>
                 
                 <p>
@@ -80,8 +80,8 @@
                
             </div>
             
-            <div class="noticia">
-                <img src="#" alt="IMAGEM">
+            <div class="noticiaServico">
+                <img src="imagens/personal.jpg" alt=""/>
                 <h2>Personal Trainer</h2>
                 
                 <p>
