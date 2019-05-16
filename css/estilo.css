@@ -18,12 +18,23 @@ body
     margin: 5%;
 }
 
-#menu
+#menu 
 {
     margin: 0 5%;
-    width: 90%;
+    width: 90%; 
+}
+
+#menu .navbar.navbar-default{
+   
+    background-color: black;
+    /*width: 101%;*/
     
 }
+
+#menu .container-fluid{
+    background-color: azure;
+}
+
 #menu ul li
 {
     font-weight: bold;
@@ -151,7 +162,7 @@ body
 {
     width: 20%;
     margin: 0 auto;
-    color: #843534;
+    color: dodgerblue;
 }
 
 
