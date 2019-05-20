@@ -26,7 +26,7 @@
     <body>
         <div id="menu">
             <div class="navbar navbar-default">
-                <img src="#" alt="logo"/>
+                <img src="../imagens/aff.png" alt=""/>
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                          <li><a href="index.php">Inicio</a></li>
@@ -36,7 +36,7 @@
                             <li><a href="Servicos.php">Serviços</a></li>
                             <li><a href="Contato.php">Contato</a></li>
                             <li class="active"><a href="Usuarios.php">Usuarios</a></li>
-                            <li><a href="#">Sair</a></li>
+                            <li><a href="../index.php">Sair</a></li>
                     </ul>
    
                 </div>
@@ -65,38 +65,8 @@
                     <input name="opcao" type="submit" value="Deletar">
                 </form>
             </div>
-            
-            
-            <table class="table table-striped table-hover">
-                <tr>
-                    <td>ID</td>
-                    <td>NOME</td>
-                    <td>USUARIO</td>
-                    <td colspan="2">OPÇOES</td>
-                </tr>
-                <tr>
-                   <td>1</td>
-                    <td>Cesar Oliveira</td>
-                    <td>Cesar</td>
-                    <td>[editar]</td>
-                    <td>[excluir]</td> 
-                </tr>
-                <tr>
-                   <td>2</td>
-                    <td>Gabriel Teodoro</td>
-                    <td>Gabriel</td>
-                    <td>[editar]</td> 
-                    <td>[excluir]</td> 
-                </tr>
-                <tr>
-                   <td>3</td>
-                    <td>Gilmara Vicentini</td>
-                    <td>Gilmara</td>
-                    <td>[editar]</td> 
-                    <td>[excluir]</td> 
-                </tr>
-            </table>
         </div>
+
         
         <div id="rodape">
              <p>2017-<?php echo date("Y"); ?> | TI-26 Senac | MR.XeroqueHolmes Todos os Direitos Reservados ©</p>

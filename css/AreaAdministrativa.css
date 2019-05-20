@@ -1,6 +1,132 @@
+body 
+{
+    background-color: #95E8DD;
+    background-image: url("../imagens/teste1234.jpg");
+}
+#menu .navbar.navbar-default img
+{
+    float: left;
+    margin: -19px;
+}
 
-/* 
-    Created on : 09/05/2019, 16:32:34
-    Author     : gabriel.vteodoro
-*/
+#corpo .table.table-striped.table-hover
+{
+    margin: 5%;
+    width: 90%;
+}
+#corpo h1 {
+    margin: 2% 5%;
+    color: #fff;
+}    
+#corpo h2
+{
+    color: #fff;
+}
+
+#corpo #textIndexADM textArea
+{
+    width: 1001px;
+    height: 81px;
+    opacity: 0.678;
+    
+}
+
+corpo #iconCorpo
+{
+    margin: 10px 46%;
+    color: #fff;
+}
+
+#corpo #iconCorpo h3
+{
+   text-align: center;
+   
+}
+
+#corpo #infos h3
+{
+   text-align: center;
+   color: white;
+}
+
+#corpo #tel
+{
+    text-align: center;
+    color: white
+}
+#corpo img
+{
+    border: 1px solid #000;
+    padding: 80px;
+    margin: 0 5%;
+    float: left;
+}
+
+
+#corpo #FormUsuario
+{
+    width: 20%;
+    margin: 2% auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 2%;
+    text-align: center;
+}
+#corpo #textoQuemSomos textArea
+{
+    width: 80%;
+    height: 500px;
+    margin: 2% 9%
+    
+}
+
+
+
+#corpo .noticia
+{
+    border: solid 1px;
+    margin: 2% 6%;
+    width: 50%;
+    color: white;
+}
+
+
+#corpo .noticia textArea
+{
+    width: 700px;
+    margin: 1%;
+    height: 100px;
+    opacity: 0.678;
+}
+#corpo .noticiaServico
+{
+    border: solid 1px;
+    margin: 2% 6%;
+    width: 50%;
+    color: white;
+}
+#corpo .noticiaServico textArea
+{
+    width: 700px;
+    margin: 1%;
+    height: 100px;
+    opacity: 0.678;
+}
+#corpo table
+{
+      background-color: white;
+}
+#corpo #textoQuemSomos #inputQS 
+{
+        margin: 0 42% auto;
+}
+
+
+#rodape
+{
+    margin: 0%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
 

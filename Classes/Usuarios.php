@@ -21,7 +21,7 @@ class Usuarios
 
             $resultado = $preparar->execute();
 
-            if($resultado > 0)
+            if($resultado === true)
             {
                 return true;
             }
@@ -39,6 +39,6 @@ class Usuarios
     }
 }
 
-//$u = new Usuario();
-//$resultado = $u->Inserir("anderson serrano", "adnderson", "anderson@adn.com.br", "1234");
+//$u = new Usuarios();
+//$resultado = $u->Inserir("anderson serrano1", "adnderson", "anderson@adn.com.br", "1234");
 //echo $resultado;
