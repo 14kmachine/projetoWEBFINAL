@@ -1,3 +1,7 @@
+<?php
+    namespace academia;
+    include './Classes/Usuarios.php';
+?>
 <!DOCTYPE html>
 <!--
 -->
@@ -24,12 +28,12 @@
     <body>
         <!-- EMMET: div#login>h1+(p+input)*2+input*2 -->
         <div id="login" >
-            <form action="#" method="GET">
+            <form action="#" method="POST">
                 <h1>Area Administrativa</h1>
                 <p>Digite seu login</p>
-                <input placeholder="Digite seu login" type="text">
+                <input placeholder="Digite seu login" type="text" name="usuario">
                 <p>Digite sua senha</p>
-                <input placeholder="*****" type="password">
+                <input placeholder="*****" type="password" name="senha">
                 <br>
                 <br>
                 <input class="btn btn-success" type="submit" value="ENTRAR">
@@ -39,5 +43,34 @@
     </body>
     
 </html>
+
+<?php
+    if(isset($_POST['usuario']) && isset($_POST['senha']))
+    {
+        if(empty($_POST['usuario']) || empty($_POST['senha']))
+        {
+            echo "<script type='text/javascript'> alert ('Não deixe os campos em branco');</script>";
+        }
+        else
+        {
+            $usuario = $_POST['usuario'];
+            $senha = $_POST['senha'];
+            
+            $u = new Usuarios();
+            $resultado = $u->Login($usuario, $senha);
+            
+            if($resultado == true)
+            {
+                //entra na area adm
+                header("Location: http://localhost/Projeto-finalAcademia/AreaAdministrativa");
+                 
+            }
+            else
+            {
+                echo "<script type='text/javascript'> alert ('Usuario e/ou senha incorretos');</script>";
+            }
+        }
+    }
+?>
 
 

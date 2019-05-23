@@ -42,7 +42,6 @@
                 </div>
             </div>
         </div>
-        </div>
         <div id="corpo">
             <h1>Confira abaixo nossos Horarios de Funcionamento e Planos </h1>
             <table class="table table-striped table-hover">
@@ -73,13 +72,15 @@
                     <td>$150,00</td> 
                 </tr>               
             </table>
-            <div id="Horario">
+            <div id="HorarioADM">
             <h1>Horarios de Funcionamento</h1>
             <textarea></textarea>
             <br>
+            <div id="inputHorarios">
             <input class="btn btn-success" type="submit"  value="Inserir">
                 <input class="btn btn-success" type="submit"  value="Atualizar">
                 <input class="btn btn-danger" type="submit"  value="Deletar">
+            </div>
             </div>
         </div>
 

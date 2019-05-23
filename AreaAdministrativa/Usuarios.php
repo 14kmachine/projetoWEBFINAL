@@ -48,11 +48,11 @@
             <div id="FormUsuario">
                 <h2>Novo Usuario</h2>
                 <!-- EMMET:form>(p+input)*5+input*3 -->
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <p>ID</p>
                     <input name="id" type="text">
                     <p>Nome Completo</p>
-                    <input name="nome" type="text" >
+                    <input name="nome" type="text" autofocus="" >
                     <p>Email</p>
                     <input name="email" type="text">
                     <p>Usuario</p>
@@ -75,27 +75,27 @@
 </html>
 
 <?php
-    if(isset($_GET['id'])&&
-           isset ($_GET['nome'])&&
-           isset ($_GET['email'])&&
-            isset ($_GET['usuario'])&&
-           isset ($_GET['senha']))
+    if(isset($_POST['id'])&&
+           isset ($_POST['nome'])&&
+           isset ($_POST['email'])&&
+            isset ($_POST['usuario'])&&
+           isset ($_POST['senha']))
     {
 
-        if(empty($_GET['nome'])||
-        empty($_GET['email'])||
-        empty($_GET['usuario'])||
-        empty($_GET['senha']))
+        if(empty($_POST['nome'])||
+        empty($_POST['email'])||
+        empty($_POST['usuario'])||
+        empty($_POST['senha']))
         {
-            echo "<script type='text/javascript'> alert ('nao deixe os campos em branco');</script>";
+            echo "<script type='text/javascript'> alert ('nao deixe os campos em branco ');</script>";
         }
         else
         {
-            $id = $_GET['id'];
-            $nome = $_GET['nome'];  
-            $email= $_GET['email'];  
-            $usuario = $_GET['usuario'];  
-            $senha = $_GET['senha'];  
+            $id = $_POST['id'];
+            $nome = $_POST['nome'];  
+            $email= $_POST['email'];  
+            $usuario = $_POST['usuario'];  
+            $senha = $_POST['senha'];  
             
             $u = new Usuarios();
             
@@ -103,13 +103,15 @@
             
            if($resultado == true)
            {
-               echo "<script type='text/javascript'> alert ('cadastro realizado com sucesso');</script>";
+//               header("Location: http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php");
+               echo "<script type='text/javascript'> alert ('Cadastro realizado com sucesso ');</script>";
            }
            else
            {
                echo "<script type='text/javascript'> alert ('deu ruim');</script>";
            }
-        }
+        }        
     }
+    
 
 

@@ -28,19 +28,20 @@ body
     width: 1001px;
     height: 81px;
     opacity: 0.678;
+    color: black;
     
 }
 
-corpo #iconCorpo
+corpo #iconCorpoADM
 {
-    margin: 10px 46%;
+    margin: 28px 41%;
     color: #fff;
 }
 
-#corpo #iconCorpo h3
+#corpo #iconCorpoADM h3
 {
    text-align: center;
-   
+   color: white;
 }
 
 #corpo #infos h3
@@ -57,9 +58,22 @@ corpo #iconCorpo
 #corpo img
 {
     border: 1px solid #000;
-    padding: 80px;
-    margin: 0 5%;
+    padding: 50px;
+    margin: 4px 5%;
     float: left;
+}
+
+#corpo #HorarioADM h1
+{
+    text-align: center;
+}
+
+#corpo #HorarioADM textArea
+{
+        margin: 0 35%;
+    width: 500px;
+    height: 100px;
+    opacity: 0.678;
 }
 
 
@@ -74,9 +88,12 @@ corpo #iconCorpo
 }
 #corpo #textoQuemSomos textArea
 {
+    opacity: 0.678;
     width: 80%;
     height: 500px;
     margin: 2% 9%
+        
+    
     
 }
 
@@ -97,6 +114,7 @@ corpo #iconCorpo
     margin: 1%;
     height: 100px;
     opacity: 0.678;
+     color: black;
 }
 #corpo .noticiaServico
 {
@@ -111,6 +129,7 @@ corpo #iconCorpo
     margin: 1%;
     height: 100px;
     opacity: 0.678;
+     color: black;
 }
 #corpo table
 {
@@ -118,7 +137,21 @@ corpo #iconCorpo
 }
 #corpo #textoQuemSomos #inputQS 
 {
-        margin: 0 42% auto;
+        margin: 0 40% auto;
+}
+
+#corpo #HorarioADM #inputHorarios
+{
+    margin: 0 42% auto;
+}
+#corpo div.noticia input
+{
+     color: black;
+}
+
+#corpo div input
+{
+     color: black;
 }
 
 
