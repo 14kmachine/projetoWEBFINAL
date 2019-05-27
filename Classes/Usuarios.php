@@ -53,9 +53,10 @@ class Usuarios
             $senhaCriptografada = sha1($senha);
             $preparar->bindValue(":senha", $senhaCriptografada);
 
-            $resultado = $preparar->execute();
+            $preparar->execute();
+            $resultado = $preparar->fetch();
 
-            if($resultado == true)
+            if($resultado[0] == 1)
             {
                 return true;
             }
@@ -67,10 +68,54 @@ class Usuarios
         catch (\PDOException $e)
         {
             throw new Exception("Ocorreu um ERRO: "+$e);
+           
+        }
+    }
+        public function ListarTodos()
+    {
+        try
+        {
+                $conexao = new \PDO("mysql:host=localhost; dbname=academia","root","");
+
+                $sql = "SELECT * FROM usuarios";
+
+                $preparar = $conexao->prepare($sql);
+                $preparar->execute();
+
+                $resultado = $preparar->fetchAll(\PDO::FETCH_OBJ);
+
+                return $resultado;
+        }
+        catch (\PDOException $e)
+        {
+            throw new Exception("Ops... Erro: "+$e->getMessage());
+        }
+    }
+    
+    public function Deletar($id)
+    {
+        $conexao = new \PDO("mysql:host=localhost; dbname=academia","root","");
+        
+        $sql = "DELETE FROM usuarios WHERE id = :id";
+        
+        $preparar = $conexao->prepare($sql);
+        $preparar->bindValue(":id", $id);
+        
+        $resultado = $preparar->execute();
+        
+        if($resultado == 1)
+        {
+            return true;
+        }
+        else
+        {
             return false;
         }
     }
 }
+
+
+// MEUS TESTES
 
 //$u = new Usuarios();
 //$resultado = $u->Inserir("anderson serrano1", "adnderson", "anderson@adn.com.br", "1234");
@@ -79,4 +124,13 @@ class Usuarios
 //teste metodo login
 //$u = new Usuarios();
 //$resultado = $u->Login('admin', 'admin');
+//echo $resultado;
+
+//teste do metodo ListarTodos
+//$u = new Usuario();
+//$u->ListarTodos();
+
+////teste do metodo Deletar
+//$u = new Usuario();
+//$resultado = $u->Deletar(5);
 //echo $resultado;

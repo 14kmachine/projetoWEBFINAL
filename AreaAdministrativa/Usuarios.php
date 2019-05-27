@@ -62,9 +62,34 @@
                     <br><br>                  
                     <input name="opcao" type="submit" value="Inserir">
                     <input name="opcao" type="submit" value="Atualizar">
-                    <input name="opcao" type="submit" value="Deletar">
+                    
                 </form>
             </div>
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td>ID</td>
+                    <td>NOME</td>
+                    <td>USUARIO</td>
+                    <td>EMAIL</td>
+                    <td colspan="2">OPÇOES</td>
+                </tr>
+                <?php
+                $u = new Usuarios();
+                $usuarios = $u->ListarTodos();
+                
+                foreach ($usuarios as $key ) 
+                {
+                    echo "<tr>"
+                            ."<td>".$key->id."</td>"
+                            ."<td>".$key->nome."</td>"
+                            ."<td>".$key->usuario."</td>"
+                            ."<td>".$key->email."</td>"
+                            ."<td><a href='#' class='btn btn-warning'>Editar</a> </td>"
+                            ."<td><a onclick=' return confirm(&quot; tem certeza&quot;);' href='?id=".$key->id."&acao=deletar' class='btn btn-danger'>Excluir</a></td>"
+                    ."</tr>";
+                }
+             ?>
+            </table>
         </div>
 
         
@@ -73,8 +98,37 @@
         </div>
     </body>
 </html>
-
 <?php
+    if(isset($_GET['id']) && isset($_GET['acao']))
+    {
+            $id = $_GET['id'];
+            $acao = $_GET['acao'];
+            
+            switch ($acao)
+            {
+                case "deletar":
+                    $u = new Usuarios();
+                    $resultado = $u->Deletar($id);
+                    
+                    if($resultado == 1)
+                    {
+                         echo "<script type='text/javascript'> alert ('Usuario removido com sucesso!');</script>";
+                         echo "<script type='text/javascript'> window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                    else
+                    {
+                         echo "<script type='text/javascript'> alert ('erro ao remover o usuario');</script>";
+                    }
+                         
+                break;
+                    
+                    
+                case "editar":
+                    break;
+            }
+    }
+
+
     if(isset($_POST['id'])&&
            isset ($_POST['nome'])&&
            isset ($_POST['email'])&&

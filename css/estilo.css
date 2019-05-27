@@ -86,17 +86,17 @@ body
 }
 
 
-corpo #iconCorpo
+#corpo #iconCorpo
 {
-    margin: 10px 46%;
+    margin: 10px 41%;
     color: #fff;
 }
 
-#corpo #iconCorpo h3
+/*#corpo #iconCorpo h3
 {
    text-align: center;
    
-}
+}*/
 
 #corpo #infos h3
 {

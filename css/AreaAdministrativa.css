@@ -32,16 +32,10 @@ body
     
 }
 
-corpo #iconCorpoADM
+#corpo #iconCorpoADM
 {
-    margin: 28px 41%;
+    margin: 10px 41%;
     color: #fff;
-}
-
-#corpo #iconCorpoADM h3
-{
-   text-align: center;
-   color: white;
 }
 
 #corpo #infos h3
@@ -58,8 +52,8 @@ corpo #iconCorpoADM
 #corpo img
 {
     border: 1px solid #000;
-    padding: 50px;
-    margin: 4px 5%;
+    padding: 36px;
+    margin: 11px 3%;
     float: left;
 }
 
@@ -70,12 +64,11 @@ corpo #iconCorpoADM
 
 #corpo #HorarioADM textArea
 {
-        margin: 0 35%;
+    margin: 0 35%;
     width: 500px;
     height: 100px;
     opacity: 0.678;
 }
-
 
 #corpo #FormUsuario
 {
@@ -92,12 +85,8 @@ corpo #iconCorpoADM
     width: 80%;
     height: 500px;
     margin: 2% 9%
-        
-    
-    
+
 }
-
-
 
 #corpo .noticia
 {
@@ -106,7 +95,6 @@ corpo #iconCorpoADM
     width: 50%;
     color: white;
 }
-
 
 #corpo .noticia textArea
 {
@@ -123,6 +111,14 @@ corpo #iconCorpoADM
     width: 50%;
     color: white;
 }
+#corpo .noticiaServico img
+{
+     border: 1px solid #000;
+    padding: 50px;
+    margin: 15px 3%;
+    float: left;
+}
+
 #corpo .noticiaServico textArea
 {
     width: 700px;
