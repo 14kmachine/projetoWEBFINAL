@@ -94,22 +94,66 @@ class Usuarios
     
     public function Deletar($id)
     {
-        $conexao = new \PDO("mysql:host=localhost; dbname=academia","root","");
-        
-        $sql = "DELETE FROM usuarios WHERE id = :id";
-        
-        $preparar = $conexao->prepare($sql);
-        $preparar->bindValue(":id", $id);
-        
-        $resultado = $preparar->execute();
-        
-        if($resultado == 1)
+        try
         {
-            return true;
+            $conexao = new \PDO("mysql:host=localhost; dbname=academia","root","");
+
+            $sql = "DELETE FROM usuarios WHERE id = :id";
+
+            $preparar = $conexao->prepare($sql);
+            $preparar->bindValue(":id", $id);
+
+            $resultado = $preparar->execute();
+
+            if($resultado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
+            catch (\PDOException $e)
+            {
+                throw new Exception("Ops... ".$e->getMessage());
+            
+            }
+    }
+     public function Atualizar($id, $nome, $email, $usuario, $senha)
+    {
+        try
         {
-            return false;
+        
+
+
+            $conexao = new \PDO("mysql:host=localhost; dbname=academia","root","");
+
+            $sql = "UPDATE usuarios SET nome = :nome, email = :email, usuario = :usuario, senha = :senha WHERE id = :id";
+
+            $preparar = $conexao->prepare($sql);
+            $preparar->bindValue(":id", $id);
+            $preparar->bindValue(":nome", $nome);
+            $preparar->bindValue(":email", $email);
+            $preparar->bindValue(":usuario", $usuario);
+
+            $senhaCriptogafada = sha1($senha);
+            $preparar->bindValue(":senha",$senhaCriptogafada);
+
+            $resultado = $preparar->execute();
+
+            if($resultado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (\PDOException $e)
+        {
+            throw new Exception("ihhh... deu ruim".$e->getMessage());
         }
     }
 }

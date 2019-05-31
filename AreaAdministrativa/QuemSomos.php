@@ -1,6 +1,12 @@
+<?php
+    namespace academia;
+    include '../Classes/QuemSomos.php';
+    
+    $s = new QuemSomos();
+?>
+
 <!DOCTYPE html>
-<!--
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -19,6 +25,20 @@
         
         <!-- meu CSS-->
         <link href="../css/AreaAdministrativa.css" rel="stylesheet" type="text/css"/>
+        
+        <script type="text/javascript">
+    
+            function Cancelar()
+            {
+                var acao = confirm("Tem Certeza?\n(Essa operação não pode ser desfeita)");
+                
+                if(acao === true)
+                {
+                    window.location.reload();
+                }
+            }
+            
+            </script>
     </head>
     
     <body>
@@ -49,14 +69,21 @@
         <div id="corpo">
             <h1>Historia</h1>
             <div id="textoQuemSomos">
-                <textarea></textarea>
-                <br>
-                
-                <div id="inputQS">
-                <input class="btn btn-success" type="submit"  value="Inserir">
-                <input class="btn btn-success" type="submit"  value="Atualizar">
-                <input class="btn btn-danger" type="submit"  value="Deletar">
-                </div>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <textarea id="CampoQuemSomos" name="texto">
+                    <?php
+                    $resultado = $s->Listar();
+                    echo $resultado->texto;
+                    ?>
+                    </textarea>
+                    <br>
+
+                    <div id="inputQS">
+
+                    <input class="btn btn-success" name="opcao" type="submit"  value="Atualizar">
+                    <input onclick="Cancelar()" class="btn btn-danger" type="submit"  value="Cancelar">
+                    </div>
+                </form>
 
             </div>
         </div>
@@ -67,3 +94,39 @@
     </body>
 </html>
 
+<?php
+    if(isset($_POST['texto'])&& isset($_POST['opcao']))      
+    {
+        if(empty($_POST['texto']))                
+        {
+            echo "<script type='text/javascript'> alert ('nao deixe os campos em branco vVv ');</script>";
+        }
+        else 
+        {               
+        $texto = $_POST['texto'];
+        $opcao = $_POST['opcao'];
+        
+
+        $q = new QuemSomos();
+
+            switch ($opcao)
+            {
+                case "Atualizar":
+                    $resultado = $q->Atualizar($texto);
+
+                    if($resultado == 1)
+                    {
+                        echo "<script type='text/javascript'> "
+                                 ."alert('Sucesso'); "
+                                . "window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/QuemSomos.php';"
+                             ."</script>";
+                    }
+                    else
+                    {
+                       echo "<script type='text/javascript'> alert ('Deu Ruim!');window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/QuemSomos.php';</script>"; 
+                    }
+                break;                
+            }
+        }                
+    }
+   

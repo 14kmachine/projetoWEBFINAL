@@ -21,6 +21,30 @@
         
         <!-- meu CSS-->
         <link href="../css/AreaAdministrativa.css" rel="stylesheet" type="text/css"/>
+        
+        <script type="text/javascript">
+            function Editar(id, nome, email, usuario)
+            {
+                document.getElementsByName('id')[0].value = id;
+                document.getElementsByName('nome')[0].value = nome;
+                document.getElementsByName('email')[0].value = email;
+                document.getElementsByName('usuario')[0].value = usuario;
+                
+                document.getElementById('inserirBtn').style.display = "none";
+                document.getElementById('atualizarBtn').style.display = "inline";
+
+            }
+            function Cancelar()
+            {
+                var acao = confirm("Tem Certeza?\n(Essa operação não pode ser desfeita)");
+                
+                if(acao === true)
+                {
+                    window.location.reload;
+                }
+            }
+            
+            </script>
     </head>
     
     <body>
@@ -60,8 +84,9 @@
                     <p>senha</p>
                     <input name="senha" type="password">
                     <br><br>                  
-                    <input name="opcao" type="submit" value="Inserir">
-                    <input name="opcao" type="submit" value="Atualizar">
+                    <input id="inserirBtn" class="btn-primary" name="opcao" type="submit" value="Inserir">
+                    <input id="atualizarBtn" style="display: none;" class="btn btn-warning" name="opcao" type="submit" value="Atualizar">
+                    <input onclick="Cancelar();" id="cancelarBtn" class="btn btn-danger" name="opcao" type="submit" value="Cancelar">
                     
                 </form>
             </div>
@@ -84,8 +109,8 @@
                             ."<td>".$key->nome."</td>"
                             ."<td>".$key->usuario."</td>"
                             ."<td>".$key->email."</td>"
-                            ."<td><a href='#' class='btn btn-warning'>Editar</a> </td>"
-                            ."<td><a onclick=' return confirm(&quot; tem certeza&quot;);' href='?id=".$key->id."&acao=deletar' class='btn btn-danger'>Excluir</a></td>"
+                            ."<td><a onclick='Editar(&quot;".$key->id."&quot;, &quot;".$key->nome."&quot;, &quot;".$key->email."&quot;, &quot;".$key->usuario."&quot;);' href='#' class='btn btn-warning'>Editar</a> </td>"
+                            ."<td><a onclick=' return confirm(&quot; tem certeza&quot;);' href='?id=".$key->id."&opcao=Deletar' class='btn btn-danger'>Excluir</a></td>"
                     ."</tr>";
                 }
              ?>
@@ -99,73 +124,166 @@
     </body>
 </html>
 <?php
-    if(isset($_GET['id']) && isset($_GET['acao']))
-    {
-            $id = $_GET['id'];
-            $acao = $_GET['acao'];
-            
-            switch ($acao)
-            {
-                case "deletar":
-                    $u = new Usuarios();
-                    $resultado = $u->Deletar($id);
-                    
-                    if($resultado == 1)
-                    {
-                         echo "<script type='text/javascript'> alert ('Usuario removido com sucesso!');</script>";
-                         echo "<script type='text/javascript'> window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';</script>";
-                    }
-                    else
-                    {
-                         echo "<script type='text/javascript'> alert ('erro ao remover o usuario');</script>";
-                    }
-                         
-                break;
-                    
-                    
-                case "editar":
-                    break;
-            }
-    }
-
-
     if(isset($_POST['id'])&&
-           isset ($_POST['nome'])&&
-           isset ($_POST['email'])&&
-            isset ($_POST['usuario'])&&
-           isset ($_POST['senha']))
+            isset($_POST['nome'])&&
+            isset($_POST['email'])&&
+            isset($_POST['usuario'])&&
+            isset($_POST['senha'])&&
+            isset($_POST['opcao']))
     {
-
         if(empty($_POST['nome'])||
-        empty($_POST['email'])||
-        empty($_POST['usuario'])||
-        empty($_POST['senha']))
+                empty($_POST['email'])||
+                empty($_POST['usuario'])||
+                empty($_POST['senha']))
         {
             echo "<script type='text/javascript'> alert ('nao deixe os campos em branco ');</script>";
         }
-        else
-        {
-            $id = $_POST['id'];
-            $nome = $_POST['nome'];  
-            $email= $_POST['email'];  
-            $usuario = $_POST['usuario'];  
-            $senha = $_POST['senha'];  
-            
-            $u = new Usuarios();
-            
-            $resultado = $u->Inserir($nome, $usuario, $email, $senha);
-            
-           if($resultado == true)
-           {
-//               header("Location: http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php");
-               echo "<script type='text/javascript'> alert ('Cadastro realizado com sucesso ');</script>";
-           }
-           else
-           {
-               echo "<script type='text/javascript'> alert ('deu ruim');</script>";
-           }
-        }        
+        else 
+        {               
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $usuario = $_POST['usuario'];
+        $senha = $_POST['senha'];
+        $opcao = $_POST['opcao'];
+        
+        $u = new Usuarios();
+
+            switch ($opcao)
+            {
+                case "Inserir":
+                    $resultado = $u->Inserir($nome, $usuario, $email, $senha);
+                    if($resultado == 1)
+                    {                                               
+                        echo "<script type='text/javascript'> "
+                                 ."alert('Inserido com Sucesso'); "
+                                . "window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';"
+                             ."</script>";
+                    }
+                    else
+                    {
+                         echo "<script type='text/javascript'> alert ('Deu Ruim!');window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                break;
+
+                case "Atualizar":
+                    $resultado = $u->Atualizar($id, $nome, $email, $usuario, $senha);
+
+                    if($resultado == 1)
+                    {
+                        echo "<script type='text/javascript'> "
+                                 ."alert('Sucesso'); "
+                                . "window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';"
+                             ."</script>";
+                    }
+                    else
+                    {
+                       echo "<script type='text/javascript'> alert ('Deu Ruim!');window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';</script>"; 
+                    }
+                break;                
+            }
+        }                
     }
+    else if(isset($_GET['id']) && isset($_GET['opcao']))
+    {
+        if($_GET['opcao'] == "Deletar")
+        {
+            $id = $_GET['id'];
+            $u = new Usuarios();
+            $resultado = $u->Deletar($id);            
+            
+            if($resultado == 1)
+            {
+                echo "<script type='text/javascript'> "
+                         ."alert('Sucesso');"
+                        . "window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';"
+                     ."</script>";
+            }
+            else
+            {
+               echo "<script type='text/javascript'> alert ('Deu Ruim!');window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';</script>";
+            }
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+//    if(isset($_GET['id']) && isset($_GET['acao']))
+//    {
+//            $id = $_GET['id'];
+//            $acao = $_GET['acao'];
+//            
+//            switch ($acao)
+//            {
+//                case "deletar":
+//                    $u = new Usuarios();
+//                    $resultado = $u->Deletar($id);
+//                    
+//                    if($resultado == 1)
+//                    {
+//                         echo "<script type='text/javascript'> alert ('Usuario removido com sucesso!');</script>";
+//                         echo "<script type='text/javascript'> window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php';</script>";
+//                    }
+//                    else
+//                    {
+//                         echo "<script type='text/javascript'> alert ('erro ao remover o usuario');</script>";
+//                    }
+//                         
+//                break;
+//                    
+//                    
+//                case "editar":
+//                    break;
+//            }
+//    }
+//
+//
+//    if(isset($_POST['id'])&&
+//           isset ($_POST['nome'])&&
+//           isset ($_POST['email'])&&
+//            isset ($_POST['usuario'])&&
+//           isset ($_POST['senha']))
+//    {
+//
+//        if(empty($_POST['nome'])||
+//        empty($_POST['email'])||
+//        empty($_POST['usuario'])||
+//        empty($_POST['senha']))
+//        {
+//            echo "<script type='text/javascript'> alert ('nao deixe os campos em branco ');</script>";
+//        }
+//        else
+//        {
+//            $id = $_POST['id'];
+//            $nome = $_POST['nome'];  
+//            $email= $_POST['email'];  
+//            $usuario = $_POST['usuario'];  
+//            $senha = $_POST['senha'];  
+//            
+//            $u = new Usuarios();
+//            
+//            $resultado = $u->Inserir($nome, $usuario, $email, $senha);
+//            
+//           if($resultado == true)
+//           {
+////               header("Location: http://localhost/Projeto-finalAcademia/AreaAdministrativa/Usuarios.php");
+//               echo "<script type='text/javascript'> alert ('Cadastro realizado com sucesso ');</script>";
+//           }
+//           else
+//           {
+//               echo "<script type='text/javascript'> alert ('deu ruim');</script>";
+//           }
+//        }        
+//    }
     
 
 
