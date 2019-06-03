@@ -55,7 +55,7 @@
         
         <div id="corpo">
             <h1>Bem Vindo ao nosso Site</h1>
-            <img src="#" alt="IMAGEM"/>
+            <img src="imagens/gymind.jpg" alt="IMAGEM"/>
             <div id="textIndex">
                 <p>
                    <?php
