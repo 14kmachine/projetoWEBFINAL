@@ -25,6 +25,10 @@
         
         <div id="topo">
             <img src="imagens/aff.png" alt=""/>
+            <div id="icones">
+                    <a href="Login.php" class="iconAdmin"><i class="fas fa-lock fa-5x"></i>
+                    </a>    
+                </div>
             </div>
        
 
@@ -36,7 +40,7 @@
                             <li><a href="QuemSomos.php">Quem Somos</a></li>
                             <li class="active"><a href="PlanoseHorarios.php">Planos e Horarios</a></li>
                             <li><a href="Servicos.php">Serviços</a></li>
-                            <li><a href="Login.php">Area ADM</a></li>
+
                         </ul>
                     </div>
                 </div>

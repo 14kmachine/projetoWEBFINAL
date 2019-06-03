@@ -58,8 +58,8 @@ class IndexADM
 
 
 //Teste do método Atualizar
-$inicialadm = new IndexADM();
-$resultado = $inicialadm->Atualizar('OLAAAAAAAAA');
-echo $resultado; 
+//$inicialadm = new IndexADM();
+//$resultado = $inicialadm->Atualizar('olaaa');
+//echo $resultado; 
 
 
