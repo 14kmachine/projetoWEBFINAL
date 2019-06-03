@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<!--
--->
+<!--<!DOCTYPE html>
+
+
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <!-- JQquery-->
+         JQquery
         <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
         
-        <!-- Botstrap-->
+         Botstrap
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         
-        <!-- Font Awesome-->
+         Font Awesome
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/all.min.js" type="text/javascript"></script>
         
-        <!-- meu CSS-->
+         meu CSS
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     
@@ -44,14 +44,14 @@
         
         <div id="corpo">
             <h1>Noticias</h1>
-            <!--EMMET: div.noticia>img+h2+p-->
-            <!-- max palavras machete: 6 palavras -->
+            EMMET: div.noticia>img+h2+p
+             max palavras machete: 6 palavras 
             <div class="noticia">
                 <img src="#" alt="IMAGEM">
                 <h2>Entrevistas</h2>
                 
                 <p>
-                    <!-- max palavras 70-->
+                     max palavras 70
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     <a href="#" >Leia Maias</a>
                 </p>
@@ -101,4 +101,4 @@
     </body>
 </html>
 
-
+-->

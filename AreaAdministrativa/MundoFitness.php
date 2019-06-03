@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<!--
--->
+<!--<!DOCTYPE html>
+
+
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <!-- JQquery-->
+         JQquery
         <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
         
-        <!-- Botstrap-->
+         Botstrap
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         
-        <!-- Font Awesome-->
+         Font Awesome
         <link href="../css/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/all.min.js" type="text/javascript"></script>
         
-        <!-- meu CSS-->
+         meu CSS
         <link href="../css/AreaAdministrativa.css" rel="stylesheet" type="text/css"/>
     </head>
     
@@ -48,8 +48,8 @@
         
         <div id="corpo">
             <h1>Noticias</h1>
-            <!--EMMET: div.noticia>img+h2+p-->
-            <!-- max palavras machete: 6 palavras -->
+            EMMET: div.noticia>img+h2+p
+             max palavras machete: 6 palavras 
             <div class="noticia">
                 <img src="#" alt="IMAGEM">
                 <input type="text" placeholder="Digite o tema da Manchete">
@@ -108,4 +108,4 @@
 </html>
 
 
-
+-->

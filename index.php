@@ -1,3 +1,10 @@
+<?php
+    namespace academia;
+    include './Classes/Index.php';
+    
+    $dex = new IndexADM();
+?>
+
 <!DOCTYPE html>
 <!--
 ../ voltar pagina
@@ -35,9 +42,7 @@
                             <li class="active"><a href="index.php">Inicio</a></li>
                             <li><a href="QuemSomos.php">Quem Somos</a></li>
                             <li><a href="PlanoseHorarios.php">Planos e Horarios</a></li>
-                            <li><a href="MundoFitness.php">Mundo Fitness</a></li>
-                            <li><a href="Servicos.php">Serviços</a></li>
-                            <li><a href="Contato.php">Contato</a></li>
+                            <li><a href="Servicos.php">Serviços</a></li>                            
                             <li><a href="Login.php">Area ADM</a></li>
                         </ul>
                     </div>
@@ -47,12 +52,15 @@
         <div id="corpo">
             <h1>Bem Vindo ao nosso Site</h1>
             <img src="#" alt="IMAGEM"/>
-            <h2>Faça uma visita e conheça nossas instalações</h2>
             <div id="textIndex">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                   <?php
+                   $dex = new IndexADM();
+                   $resultado = $dex->Listar();
+                   echo $resultado->textoIndex;
+                   ?>
                 </p>
+                
            
             </div>
             <a href="Contato.php"><input class="btn btn-info" type="submit" value="FaleConosco"></a>
