@@ -51,7 +51,6 @@
                         <li class="active"><a href="index.php">Inicio</a></li>
                             <li><a href="QuemSomos.php">Quem Somos</a></li>
                             <li><a href="PlanoseHorarios.php">Planos e Horarios</a></li>
-                            <li><a href="Servicos.php">Serviços</a></li>
                             <li><a href="Usuarios.php">Usuarios</a></li>
                             <li><a href="../index.php">Sair</a></li>
                     </ul>
@@ -65,10 +64,10 @@
             <img src="#" alt="IMAGEM"/>
             <div id="textIndexADM">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                        <textarea id="CampoIndex" name="textoIndex">
+                        <textarea id="CampoIndex" name="texto">
                         <?php
                         $resultado = $dex->Listar();
-                        echo $resultado->textoIndex;
+                        echo $resultado->texto;
                         ?>
                         </textarea>
 

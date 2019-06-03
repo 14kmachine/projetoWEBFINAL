@@ -41,8 +41,7 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.php">Inicio</a></li>
                             <li><a href="QuemSomos.php">Quem Somos</a></li>
-                            <li><a href="PlanoseHorarios.php">Planos e Horarios</a></li>
-                            <li><a href="Servicos.php">Serviços</a></li>                            
+                            <li><a href="PlanoseHorarios.php">Planos e Horarios</a></li>                           
                             <li><a href="Login.php">Area ADM</a></li>
                         </ul>
                     </div>
@@ -57,14 +56,11 @@
                    <?php
                    $dex = new IndexADM();
                    $resultado = $dex->Listar();
-                   echo $resultado->textoIndex;
+                   echo $resultado->texto;
                    ?>
-                </p>
-                
-           
-            </div>
-            <a href="Contato.php"><input class="btn btn-info" type="submit" value="FaleConosco"></a>
-          
+                </p>                       
+            </div>  
+            
             <div id="iconCorpo">
                 <h3>Redes Sociais</h3> 
                 <a href="https://www.facebook.com/pages/Academia-Equipe-Performance/192097757617841?__tn__=%2CdkC-R-R&eid=ARATm6X8sw-ruZQbMS_NAwo9nzvNr22MbqjcF1WXWFEc9bw57vxKsxUBtkwXoMTY5w0GOPkn7cGLqacC&hc_ref=ARQQARDXo1hBeN1JyKDjiqw2kRkG2zDF5CE1fAMz0tMa6tlhVeGOQ5LqqAeoRgkjOo4&fref=tag" class="iconFacebook"> <i class="fab fa-facebook-square fa-5x"></i>

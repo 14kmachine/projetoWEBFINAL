@@ -56,7 +56,6 @@
                          <li><a href="index.php">Inicio</a></li>
                             <li><a href="QuemSomos.php">Quem Somos</a></li>
                             <li><a href="MundoFitness.php">Mundo Fitness</a></li>
-                            <li><a href="Servicos.php">Serviços</a></li>
                             <li class="active"><a href="Usuarios.php">Usuarios</a></li>
                             <li><a href="../index.php">Sair</a></li>
                     </ul>
