@@ -1,3 +1,10 @@
+<?php
+    namespace academia;
+    include './Classes/PlanoseHorarios.php';
+    
+    $dex = new Horario();
+?>
+
 <!DOCTYPE html>
 <!--
 ../ voltar pagina
@@ -77,7 +84,13 @@
             </table>
             <div id="Horario">
             <h1>Horarios de Funcionamento</h1>
-            <h2>Segunda-Sexta das 5:30 as 21:30 | Sabado das 8:00 as 11:00</h2>
+                <p>
+                   <?php
+                   $dex = new Horario();
+                   $resultado = $dex->Listar();
+                   echo $resultado->horario;
+                   ?>
+                </p>     
             </div>
         </div>
 

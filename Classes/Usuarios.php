@@ -171,10 +171,15 @@ class Usuarios
 //echo $resultado;
 
 //teste do metodo ListarTodos
-//$u = new Usuario();
+//$u = new Usuarios();
 //$u->ListarTodos();
 
 ////teste do metodo Deletar
 //$u = new Usuario();
 //$resultado = $u->Deletar(5);
+//echo $resultado;
+//
+//////Teste do metodo Atualizar
+//$u = new Usuarios();
+//$resultado = $u->Atualizar(14, '$nome', '$email', '$usuario', '$senha');
 //echo $resultado;

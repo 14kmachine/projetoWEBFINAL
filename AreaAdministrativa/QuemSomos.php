@@ -74,14 +74,15 @@
                     ?>
                     </textarea>
                     <br>
+                
 
                     <div id="inputQS">
 
                     <input class="btn btn-success" name="opcao" type="submit"  value="Atualizar">
                     <input onclick="Cancelar()" class="btn btn-danger" type="submit"  value="Cancelar">
+                    
                     </div>
                 </form>
-
             </div>
         </div>
         
