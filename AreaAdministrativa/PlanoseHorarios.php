@@ -1,9 +1,11 @@
 <?php
     namespace academia;
     include '../Classes/PlanoseHorarios.php';
+    include '../Classes/planosmusculacao.php';
+    include '../Classes/planosdanca.php';
     
     $dex = new Horario();
-  
+   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -59,37 +61,65 @@
         <div id="corpo">
             
                 <h1>Confira abaixo nossos Horarios de Funcionamento e Planos </h1>
-           
+           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
                 <table class="table table-striped table-hover">
-                    <h1>Planos Musculação</h1>
+                    
+                        <h1>Planos Musculação</h1>
+                    
                     <tr>
                         <td>Diario</td>
                         <td>Semanal</td>
                         <td>Quinzenal</td>
                         <td>Mensal</td>                   
                         <td>Trimenstral</td>
+                        <td>OPÇÕES</td>
                     </tr>
+                    
+                    <?php
+                        $p = new PlanosMusculacao();
+                        $resultado = $p->Listar();
+                    ?>
+                    
                     <tr>
-                        <td>$10,00</td>
-                       <td>$20,00</td>
-                        <td>$30,00</td>
-                        <td>$65,00</td> 
-                        <td>$170,00</td> 
-                    </tr>               
+                        <td><input type="text" name="diario" value="<?php echo ($resultado->diario); ?>" /></td>
+                        <td><input type="text" name="semanal" value="<?php echo ($resultado->semanal); ?>"/></td>
+                        <td><input type="text" name="quinzenal" value="<?php echo ($resultado->quinzenal); ?>"/></td>
+                        <td><input type="text" name="mensal" value="<?php echo ($resultado->mensal); ?>"</td> 
+                        <td><input type="text" name="trimenstral" value="<?php echo ($resultado->trimenstral); ?>"</td> 
+                    
+                        <input class="btn btn-success" name="opcao" type="submit"  value="Atualizar Musculacao">
+                    
+                    </tr>                    
                 </table>
-                <table class="table table-striped table-hover">
-                    <h1>Planos Dança</h1>
-                    <tr>
+            
+                 <table class="table table-striped table-hover">
+                    
+                        <h1>Planos Dança</h1>
+                    
+                    <tr>                      
                         <td>Mensal</td>                   
                         <td>Trimenstral</td>
+                        <td>OPÇÕES</td>
                     </tr>
-                    <tr>
-                        <td>$60,00</td> 
-                        <td>$150,00</td> 
-                    </tr>               
+                    
+                    <?php
+                        $d = new planosdanca();
+                        $resultado = $d->Listar();
+                    ?>
+                    
+                    <tr>                     
+                        <td><input type="text" name="mensal" value="<?php echo ($resultado->mensal); ?>"</td> 
+                        <td><input type="text" name="trimenstral" value="<?php echo ($resultado->trimenstral); ?>"</td> 
+                    
+                        <input class="btn btn-success" name="opcao" type="submit"  value="Atualizar Danca">
+                    
+                    </tr>                    
                 </table>
+
+                 
+                 
                 <div id="HorarioADM">
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+
                         <textarea id="CampoIndex" name="horario">
                         <?php
                         $resultado = $dex->Listar();
@@ -98,12 +128,12 @@
                         </textarea>
 
                         <div id="inputHorarios">
-                            <input class="btn btn-success" name="opcao" type="submit"  value="Atualizar">
+                             <input class="btn btn-success" name="opcao" type="submit"  value="Atualizar Horarios">
                              <input onclick="Cancelar()" class="btn btn-danger" type="submit"  value="Cancelar">
                         </div>
-                    </form>
+
                 </div>
-          
+           </form>
         </div>
 
         <div id="rodape">
@@ -115,37 +145,85 @@
 </html>
 
   <?php
-    if(isset($_POST['horario'])&& isset($_POST['opcao']))      
+    if(isset($_GET['horario'])&& 
+            isset($_GET['opcao'])&& 
+            isset($_GET['diario'])&& 
+            isset($_GET['semanal'])&& 
+            isset($_GET['quinzenal'])&& 
+            isset($_GET['mensal'])&& 
+            isset($_GET['trimenstral'])&& 
+            isset($_GET['horario'])&&
+            isset($_GET['mensal'])&&
+            isset($_GET['trimenstral']))      
     {
-        if(empty($_POST['horario']))                
+        if(empty($_GET['horario'])&&($_GET['diario'])&&($_GET['semanal'])&&($_GET['quinzenal'])&&($_GET['mensal'])&&($_GET['trimenstral'])&&($_GET['mensaldanca'])&&($_GET['trimenstraldanca']))                
         {
             echo "<script type='text/javascript'> alert ('nao deixe os campos em branco vVv ');</script>";
         }
         else 
         {               
-        $horario = $_POST['horario'];
-        $opcao = $_POST['opcao'];
+        $horario = $_GET['horario'];
+        $opcao = $_GET['opcao'];
+        $diario = $_GET['diario'];
+        $semanal = $_GET['semanal'];
+        $quinzenal = $_GET['quinzenal'];
+        $mensal = $_GET['mensal'];
+        $trimenstral = $_GET['trimenstral'];
+        $mensaldanca = $_GET['mensaldanca'];
+        $trimenstraldanca = $_GET['trimenstral'];
+        
         
 
         $q = new Horario();
+        $p = new PlanosMusculacao();
+        $d = new PlanosDanca();
 
             switch ($opcao)
             {
-                case "Atualizar":
+                case "Atualizar Horarios":
                     $resultado = $q->Atualizar($horario);
 
                     if($resultado == 1)
                     {
                         echo "<script type='text/javascript'> "
                                  ."alert('Sucesso'); "
-                                . "window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/PlanoseHorarios.php';"
                              ."</script>";
                     }
                     else
                     {
-                       echo "<script type='text/javascript'> alert ('Deu Ruim!');window.location.href='http://localhost/Projeto-finalAcademia/AreaAdministrativa/PlanoseHorarios.php';</script>"; 
+                       echo "<script type='text/javascript'> alert ('Deu Ruim!');</script>"; 
                     }
-                break;                
+                break;  
+                
+                case "Atualizar Musculacao":
+                    $resultado = $p->Atualizar($diario, $semanal, $quinzenal, $mensal, $trimenstral);
+
+                    if($resultado == 1)
+                    {
+                        echo "<script type='text/javascript'> "
+                                 ."alert('Sucesso'); "
+                             ."</script>";
+                    }
+                    else
+                    {
+                       echo "<script type='text/javascript'> alert ('Deu Ruim!');</script>"; 
+                    }
+                    
+                    break;
+                case "Atualizar Danca":
+                    $resultado = $d->Atualizar($mensaldanca, $trimenstraldanca);
+
+                    if($resultado == 1)
+                    {
+                        echo "<script type='text/javascript'> "
+                                 ."alert('Sucesso'); "
+                             ."</script>";
+                    }
+                    else
+                    {
+                       echo "<script type='text/javascript'> alert ('Deu Ruim!');</script>"; 
+                    }
+                    break;
             }
         }                
     }
