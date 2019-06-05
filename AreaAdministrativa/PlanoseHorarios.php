@@ -77,7 +77,7 @@
                     
                     <?php
                         $p = new PlanosMusculacao();
-                        $resultado = $p->Listar();
+                        $resultado = $p->Listar();   
                     ?>
                     
                     <tr>
@@ -105,6 +105,7 @@
                     <?php
                         $d = new planosdanca();
                         $resultado = $d->Listar();
+
                     ?>
                     
                     <tr>                     
@@ -115,9 +116,7 @@
                     
                     </tr>                    
                 </table>
-
-                 
-                 
+       
                 <div id="HorarioADM">
 
                         <textarea id="CampoIndex" name="horario">
@@ -153,8 +152,8 @@
             isset($_GET['mensal'])&& 
             isset($_GET['trimenstral'])&& 
             isset($_GET['horario'])&&
-            isset($_GET['mensal'])&&
-            isset($_GET['trimenstral']))      
+            isset($_GET['mensaldanca'])&&
+            isset($_GET['trimenstraldanca']))      
     {
         if(empty($_GET['horario'])&&($_GET['diario'])&&($_GET['semanal'])&&($_GET['quinzenal'])&&($_GET['mensal'])&&($_GET['trimenstral'])&&($_GET['mensaldanca'])&&($_GET['trimenstraldanca']))                
         {
